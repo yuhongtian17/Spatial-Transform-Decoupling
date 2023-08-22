@@ -2,11 +2,11 @@
 
 ## Abstract
 
-<div align=center><img src="./figures/framework.png"></div>
+<div align=center><img src="./figures/framework.PNG"></div>
 
 Vision Transformers (ViTs) have achieved remarkable success in computer vision tasks. However, their potential in rotation-sensitive scenarios has not been fully explored, and this limitation may be inherently attributed to the lack of spatial invariance in the data-forwarding process. In this study, we present a novel approach, termed Spatial Transform Decoupling (STD), providing a simple-yet-effective solution for oriented object detection with ViTs. Built upon stacked ViT blocks, STD utilizes separate network branches to predict the position, size, and angle of bounding boxes, effectively harnessing the spatial transform potential of ViTs in a divide-and-conquer fashion. Moreover, by aggregating cascaded activation masks (CAMs) computed upon the regressed parameters, STD gradually enhances features within regions of interest (RoIs), which complements the self-attention mechanism. Without bells and whistles, STD achieves state-of-the-art performance on the benchmark datasets including DOTA-v1.0 (82.24\% mAP) and HRSC2016 (98.55\% mAP), which demonstrates the effectiveness of the proposed method. Source code is enclosed in the supplementary material. Source code is available at https://github.com/yuhongtian17/Spatial-Transform-Decoupling.
 
-Full paper is available at https://arxiv.org/pdf/2308.xxxxx.pdf.
+Full paper is available at https://arxiv.org/abs/2308.10561.
 
 ## Results and models
 
@@ -86,13 +86,10 @@ python "../DOTA_devkit/dota_evaluation_task1.py" --mergedir "./work_dirs/Task1_r
 Please also support two representation learning works on which this work is based:
 
 imTED: [paper](https://arxiv.org/abs/2205.09613) [code](https://github.com/LiewFeng/imTED)
+
 HiViT: [paper](https://arxiv.org/abs/2205.14949) [code](https://github.com/zhangxiaosong18/hivit)
 
 Also thanks to [Xue Yang](https://yangxue0827.github.io/) for his inspiration in the field of Oriented Object Detection.
-
-## Citation
-
-Not available NOW.
 
 ## License
 
