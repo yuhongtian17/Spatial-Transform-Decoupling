@@ -1,8 +1,15 @@
-# Spatial Transform Decoupling for Oriented Object Detection
+# [AAAI2024] Spatial Transform Decoupling for Oriented Object Detection
+
+<p align="left">
+<a href="https://arxiv.org/abs/2308.10561"><img src="https://img.shields.io/badge/arXiv-Paper-<color>"></a>
+</p>
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/spatial-transform-decoupling-for-oriented/object-detection-in-aerial-images-on-dota-1)](https://paperswithcode.com/sota/object-detection-in-aerial-images-on-dota-1?p=spatial-transform-decoupling-for-oriented)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/spatial-transform-decoupling-for-oriented/object-detection-in-aerial-images-on-hrsc2016)](https://paperswithcode.com/sota/object-detection-in-aerial-images-on-hrsc2016?p=spatial-transform-decoupling-for-oriented)
 
 ## Abstract
 
-<div align=center><img src="./figures/framework.PNG"></div>
+<div align=center><img src="./figures/figure2_framework.png"></div>
 
 Vision Transformers (ViTs) have achieved remarkable success in computer vision tasks. However, their potential in rotation-sensitive scenarios has not been fully explored, and this limitation may be inherently attributed to the lack of spatial invariance in the data-forwarding process. In this study, we present a novel approach, termed Spatial Transform Decoupling (STD), providing a simple-yet-effective solution for oriented object detection with ViTs. Built upon stacked ViT blocks, STD utilizes separate network branches to predict the position, size, and angle of bounding boxes, effectively harnessing the spatial transform potential of ViTs in a divide-and-conquer fashion. Moreover, by aggregating cascaded activation masks (CAMs) computed upon the regressed parameters, STD gradually enhances features within regions of interest (RoIs), which complements the self-attention mechanism. Without bells and whistles, STD achieves state-of-the-art performance on the benchmark datasets including DOTA-v1.0 (82.24\% mAP) and HRSC2016 (98.55\% mAP), which demonstrates the effectiveness of the proposed method. Source code is enclosed in the supplementary material. Source code is available at https://github.com/yuhongtian17/Spatial-Transform-Decoupling.
 
