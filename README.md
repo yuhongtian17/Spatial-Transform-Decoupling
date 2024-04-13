@@ -1,6 +1,7 @@
 # [AAAI2024] Spatial Transform Decoupling for Oriented Object Detection
 
 <p align="left">
+<a href="https://ojs.aaai.org/index.php/AAAI/article/view/28502"><img src="https://img.shields.io/badge/AAAI2024-Paper-<color>"></a>
 <a href="https://arxiv.org/abs/2308.10561"><img src="https://img.shields.io/badge/arXiv-Paper-<color>"></a>
 </p>
 
@@ -13,31 +14,37 @@
 
 Vision Transformers (ViTs) have achieved remarkable success in computer vision tasks. However, their potential in rotation-sensitive scenarios has not been fully explored, and this limitation may be inherently attributed to the lack of spatial invariance in the data-forwarding process. In this study, we present a novel approach, termed Spatial Transform Decoupling (STD), providing a simple-yet-effective solution for oriented object detection with ViTs. Built upon stacked ViT blocks, STD utilizes separate network branches to predict the position, size, and angle of bounding boxes, effectively harnessing the spatial transform potential of ViTs in a divide-and-conquer fashion. Moreover, by aggregating cascaded activation masks (CAMs) computed upon the regressed parameters, STD gradually enhances features within regions of interest (RoIs), which complements the self-attention mechanism. Without bells and whistles, STD achieves state-of-the-art performance on the benchmark datasets including DOTA-v1.0 (82.24\% mAP) and HRSC2016 (98.55\% mAP), which demonstrates the effectiveness of the proposed method. Source code is enclosed in the supplementary material. Source code is available at https://github.com/yuhongtian17/Spatial-Transform-Decoupling.
 
+Published paper in AAAI2024 is available at https://ojs.aaai.org/index.php/AAAI/article/view/28502.
+
 Full paper is available at https://arxiv.org/abs/2308.10561.
 
 ## Results and models
 
-Imagenet MAE pre-trained ViT-S backbone: [pan.baidu.com](https://pan.baidu.com/s/19nw-Ry2pGoeHZ0lQ-XehQg)
-
-Imagenet MAE pre-trained ViT-B backbone: [official MAE weight](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_base_full.pth)
-
-Imagenet MAE pre-trained HiViT-B backbone: [pan.baidu.com](https://pan.baidu.com/s/19nw-Ry2pGoeHZ0lQ-XehQg)
+All models, logs and submissions is available at [pan.baidu.com](https://pan.baidu.com/s/19nw-Ry2pGoeHZ0lQ-XehQg).
 
 > Password of `pan.baidu.com`: STDC
+
+__All models can be downloaded in release mode now!__
+
+Imagenet MAE pre-trained ViT-S backbone: [mae_vit_small_800e.pth](https://github.com/yuhongtian17/Spatial-Transform-Decoupling/releases/download/STD-240413/mae_vit_small_800e.pth)
+
+Imagenet MAE pre-trained ViT-B backbone: [mae_pretrain_vit_base_full.pth](https://github.com/yuhongtian17/Spatial-Transform-Decoupling/releases/download/STD-240413/mae_pretrain_vit_base_full.pth) or [official MAE weight](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_base_full.pth)
+
+Imagenet MAE pre-trained HiViT-B backbone: [mae_hivit_base_dec512d8b_hifeat_p1600lr10.pth](https://github.com/yuhongtian17/Spatial-Transform-Decoupling/releases/download/STD-240413/mae_hivit_base_dec512d8b_hifeat_p1600lr10.pth)
 
 DOTA-v1.0 (multi-scale)
 
 |               Model                |  mAP  | Angle | lr schd | Batch Size | Configs | Models |  Logs  | Submissions |
 | :--------------------------------: | :---: | :---: | :-----: | :--------: | :-----: | :----: | :----: | :---------: |
-|  STD with Oriented RCNN and ViT-B  | 81.66 | le90  |   1x    |    1\*8    | [cfg](./mmrotate-main/configs/rotated_imted/dota/vit/rotated_imted_vb1m_oriented_rcnn_vit_base_1x_dota_ms_rr_le90_stdc_xyawh321v.py) | [model](https://pan.baidu.com/s/19nw-Ry2pGoeHZ0lQ-XehQg) | [log](https://pan.baidu.com/s/19nw-Ry2pGoeHZ0lQ-XehQg) | [submission](https://pan.baidu.com/s/19nw-Ry2pGoeHZ0lQ-XehQg) |
-| STD with Oriented RCNN and HiViT-B | 82.24 | le90  |   1x    |    1\*8    | [cfg](./mmrotate-main/configs/rotated_imted/dota/hivit/rotated_imted_hb1m_oriented_rcnn_hivitdet_base_1x_dota_ms_rr_le90_stdc_xyawh321v.py) | [model](https://pan.baidu.com/s/19nw-Ry2pGoeHZ0lQ-XehQg) | [log](https://pan.baidu.com/s/19nw-Ry2pGoeHZ0lQ-XehQg) | [submission](https://pan.baidu.com/s/19nw-Ry2pGoeHZ0lQ-XehQg) |
+|  STD with Oriented RCNN and ViT-B  | 81.66 | le90  |   1x    |    1\*8    | [cfg](./mmrotate-main/configs/rotated_imted/dota/vit/rotated_imted_vb1m_oriented_rcnn_vit_base_1x_dota_ms_rr_le90_stdc_xyawh321v.py) | [model](https://github.com/yuhongtian17/Spatial-Transform-Decoupling/releases/download/STD-240413/orcnn_std_vit_dota_epoch_12.pth) | [log](https://github.com/yuhongtian17/Spatial-Transform-Decoupling/releases/download/STD-240413/orcnn_std_vit_dota_20240328_185845.log) | [submission](https://github.com/yuhongtian17/Spatial-Transform-Decoupling/releases/download/STD-240413/ms_ovs8.zip) |
+| STD with Oriented RCNN and HiViT-B | 82.24 | le90  |   1x    |    1\*8    | [cfg](./mmrotate-main/configs/rotated_imted/dota/hivit/rotated_imted_hb1m_oriented_rcnn_hivitdet_base_1x_dota_ms_rr_le90_stdc_xyawh321v.py) | [model](https://github.com/yuhongtian17/Spatial-Transform-Decoupling/releases/download/STD-240413/orcnn_std_hivit_dota_epoch_12.pth) | [log](https://github.com/yuhongtian17/Spatial-Transform-Decoupling/releases/download/STD-240413/orcnn_std_hivit_dota_20230805_184646.log) | [submission](https://github.com/yuhongtian17/Spatial-Transform-Decoupling/releases/download/STD-240413/ms_ohs8.zip) |
 
 HRSC2016
 
 |               Model                | mAP(07) | mAP(12) | Angle | lr schd | Batch Size | Configs | Models |  Logs  |
 | :--------------------------------: | :-----: | :-----: | :---: | :-----: | :--------: | :-----: | :----: | :----: |
-|  STD with Oriented RCNN and ViT-B  |  90.67  |  98.55  | le90  |   3x    |    1\*8    | [cfg](./mmrotate-main/configs/rotated_imted/hrsc/vit/rotated_imted_oriented_rcnn_vit_base_3x_hrsc_rr_le90_stdc_xyawh321v.py) | [model](https://pan.baidu.com/s/19nw-Ry2pGoeHZ0lQ-XehQg) | [log](https://pan.baidu.com/s/19nw-Ry2pGoeHZ0lQ-XehQg) |
-| STD with Oriented RCNN and HiViT-B |  90.63  |  98.20  | le90  |   3x    |    1\*8    | [cfg](./mmrotate-main/configs/rotated_imted/hrsc/hivit/rotated_imted_oriented_rcnn_hivitdet_base_3x_hrsc_rr_le90_stdc_xyawh321v.py) | [model](https://pan.baidu.com/s/19nw-Ry2pGoeHZ0lQ-XehQg) | [log](https://pan.baidu.com/s/19nw-Ry2pGoeHZ0lQ-XehQg) |
+|  STD with Oriented RCNN and ViT-B  |  90.67  |  98.55  | le90  |   3x    |    1\*8    | [cfg](./mmrotate-main/configs/rotated_imted/hrsc/vit/rotated_imted_oriented_rcnn_vit_base_3x_hrsc_rr_le90_stdc_xyawh321v.py) | [model](https://github.com/yuhongtian17/Spatial-Transform-Decoupling/releases/download/STD-240413/orcnn_std_vit_hrsc_epoch_36.pth) | [log](https://github.com/yuhongtian17/Spatial-Transform-Decoupling/releases/download/STD-240413/orcnn_std_vit_hrsc_20230814_214056.log) |
+| STD with Oriented RCNN and HiViT-B |  90.63  |  98.20  | le90  |   3x    |    1\*8    | [cfg](./mmrotate-main/configs/rotated_imted/hrsc/hivit/rotated_imted_oriented_rcnn_hivitdet_base_3x_hrsc_rr_le90_stdc_xyawh321v.py) | [model](https://github.com/yuhongtian17/Spatial-Transform-Decoupling/releases/download/STD-240413/orcnn_std_hivit_hrsc_epoch_36.pth) | [log](https://github.com/yuhongtian17/Spatial-Transform-Decoupling/releases/download/STD-240413/orcnn_std_hivit_hrsc_20230808_230504.log) |
 
 ## Installation
 
@@ -97,6 +104,24 @@ imTED: [paper](https://arxiv.org/abs/2205.09613) [code](https://github.com/LiewF
 HiViT: [paper](https://arxiv.org/abs/2205.14949) [code](https://github.com/zhangxiaosong18/hivit)
 
 Also thanks to [Xue Yang](https://yangxue0827.github.io/) for his inspiration in the field of Oriented Object Detection.
+
+## News
+
+[VMamba](https://github.com/MzeroMiko/VMamba)-DOTA is available at [here](https://github.com/AkitsukiM/VMamba-DOTA)! A brand new model!
+
+## Citation
+
+```
+@inproceedings{yu2024spatial,
+  title={Spatial Transform Decoupling for Oriented Object Detection},
+  author={Yu, Hongtian and Tian, Yunjie and Ye, Qixiang and Liu, Yunfan},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={38},
+  number={7},
+  pages={6782--6790},
+  year={2024}
+}
+```
 
 ## License
 
